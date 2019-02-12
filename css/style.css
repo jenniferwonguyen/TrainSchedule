@@ -1,0 +1,17 @@
+.jumbotron {
+    color: red;
+    background-position-y: 10%;
+    color: red;
+    background-color: black;
+}
+
+div.panel-body {
+    background-image: url('');
+    color: red;
+}
+
+.btn-primary {
+    background-color: black;
+    border-color: red;
+    font-weight: bold;
+}
