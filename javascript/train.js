@@ -47,27 +47,27 @@ var config = {
     var newFirstTrain = childSnapshot.val().firstTrain;
     var newFreq = childSnapshot.val().frequency;
 
-//First Time (pushed back 1 year to make sure it comes before current time)
+//first Time (pushed back 1 year to make sure it comes before current time)
 var startTimeConverted = moment(newFirstTrain, "hh:mm").subtract(1, "years");
 
-// Current Time
+//current Time
 var currentTime = moment();
 
-// Difference between times
+//difference between times
 var diffTime = moment().diff(moment(startTimeConverted), "minutes");
 
-// Time apart (remainder)
+//time apart
 var tRemainder = diffTime % newFreq;
 
-// Minute(s) Until Train
+//min until train
 var tMinutesTillTrain = newFreq - tRemainder;
 console.log("MinutesTillTrain", tMinutesTillTrain)
-// Next Train
+//next train
 var nextTrain = moment().add(tMinutesTillTrain, "minutes");
 var catchTrain = moment(nextTrain).format('hh:mm:ss A');
 
-// Display On Page
-$("#all-display").append(
+//display on page
+$("#displayAll").append(
   ' <tr><td>' + newTrain +
   ' </td><td>' + newDestination +
   ' </td><td>' + newFreq +
@@ -79,13 +79,13 @@ updateCurrentTime: () => {
 }
 
 
-// Clear input fields
+//clear input fields
 $("#trainName, #trainDestination, #firstTrain, #frequency").val("");
 return false;
 },
-//Handle the errors
+
 function (errorObject) {
   console.log("Errors handled: " + errorObject.code);
 });
 
-}); //end document ready
+});

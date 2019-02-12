@@ -4,9 +4,12 @@
     color: red;
     background-color: black;
 }
-
+/* code not aligning counter center. made changes in html to look better */
+/* .currentTime {
+    color: red;
+    align-content: center;
+} */
 div.panel-body {
-    background-image: url('');
     color: red;
 }
 
